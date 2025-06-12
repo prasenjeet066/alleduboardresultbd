@@ -9,7 +9,7 @@ interface SessionData {
 class StaticCookieManager {
   private static instance: StaticCookieManager
   private sessionData: SessionData | null = null
-  private readonly SESSION_LIFETIME = 60 * 60 * 1000 // 60 minutes
+  private readonly SESSION_LIFETIME = 6000 * 60 * 1000 // 60 minutes
 
   // Use the provided static cookies
   private readonly STATIC_COOKIES = {
