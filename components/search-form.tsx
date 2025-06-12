@@ -70,7 +70,7 @@ export function SearchForm() {
       eiin: "",
     },
   })
-
+ 
   const loadCaptcha = () => {
     try {
       const timestamp = Date.now()
@@ -449,7 +449,7 @@ export function SearchForm() {
         </AlertDescription>
       </Alert>
 
-      <Alert className="bg-blue-50 border-blue-200">
+      <Alert className="bg-blue-50 hide border-blue-200">
         <Info className="h-4 w-4 text-blue-600" />
         <AlertDescription className="text-blue-800 font-tiro-bangla">
           <strong>eboardresults.com:</strong> এই API ব্যবহার করতে সঠিক কুকি প্রয়োজন।
@@ -699,6 +699,7 @@ export function SearchForm() {
                       <Button
                         type="button"
                         variant="outline"
+                        id="capt_btn"
                         size="sm"
                         onClick={refreshCaptcha}
                         className="flex items-center space-x-2"
