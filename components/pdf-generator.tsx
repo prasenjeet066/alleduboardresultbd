@@ -104,12 +104,12 @@ export async function generatePDF(data: PDFData) {
       unit: "mm",
       format: "a4",
       putOnlyUsedFonts: true,
-      compress: true,
+      compress: false,
     })
 
     const pageWidth = doc.internal.pageSize.width
     const pageHeight = doc.internal.pageSize.height
-
+/**
     // Set cream/off-white background like the original
     doc.setFillColor(254, 254, 250) // Very light cream
     doc.rect(0, 0, pageWidth, pageHeight, "F")
@@ -128,12 +128,12 @@ export async function generatePDF(data: PDFData) {
     doc.setDrawColor(100, 100, 100)
     doc.setLineWidth(0.8)
     doc.rect(12, 12, pageWidth - 24, pageHeight - 24)
-
+**/
     // Generate serial numbers
     const serialNumber = generateSerialNumber()
     const gbtslNumber = generateGBTSLNumber()
 
-    // === HEADER SECTION ===
+    /** === HEADER SECTION ===
     // Board logo placeholder (circular)
     const logoX = 25
     const logoY = 20
@@ -150,7 +150,7 @@ export async function generatePDF(data: PDFData) {
     doc.setFont("helvetica", "bold")
     doc.setFontSize(8)
     doc.text("BD", logoX, logoY + 2, { align: "center" })
-
+**/
     // Main header text
     doc.setTextColor(100, 100, 100) // Dark gray like original
     doc.setFont("times", "bold")
@@ -247,7 +247,7 @@ export async function generatePDF(data: PDFData) {
 
       // Cell borders
       doc.setDrawColor(0, 0, 0)
-      doc.setLineWidth(0.3)
+      doc.setLineWidth(0.1)
       doc.rect(gradeTableX, y, gradeCellWidth, gradeCellHeight)
       doc.rect(gradeTableX + gradeCellWidth, y, gradeCellWidth, gradeCellHeight)
       doc.rect(gradeTableX + gradeCellWidth * 2, y, gradeCellWidth, gradeCellHeight)
@@ -269,7 +269,7 @@ export async function generatePDF(data: PDFData) {
 
     // Student details with proper formatting
     const studentInfo = [
-      ["Name of Student", studentData.name || "Nabami Mojumder"],
+      ["Name of Student", studentData.name || "NOT SHOW"],
       ["Father's Name", studentData.fname || "Narayan Mojumder"],
       ["Mother's Name", studentData.mname || "Suchitra Mojumder"],
       ["Name of Centre", studentData.centre || "Ramgarh(271)"],
