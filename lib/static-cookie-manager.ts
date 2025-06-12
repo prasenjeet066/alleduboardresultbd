@@ -13,8 +13,9 @@ class StaticCookieManager {
 
   // Use the provided static cookies
   private readonly STATIC_COOKIES = {
-    EBRSESSID2: "ebr68442e0775276636850",
-    __nobotA2: "CgABnWhELgcNLwqaA3WoAg==",
+
+    EBRSESSID2: "ebr684acfde2bb74221180",
+    __nobotA2: "CgABnWhKz952eQ8yAwj/Ag==",
   }
 
   private constructor() {}
