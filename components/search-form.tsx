@@ -449,12 +449,7 @@ export function SearchForm() {
         </AlertDescription>
       </Alert>
 
-      <Alert className="bg-blue-50 hide border-blue-200">
-        <Info className="h-4 w-4 text-blue-600" />
-        <AlertDescription className="text-blue-800 font-tiro-bangla">
-          <strong>eboardresults.com:</strong> এই API ব্যবহার করতে সঠিক কুকি প্রয়োজন।
-        </AlertDescription>
-      </Alert>
+    
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
