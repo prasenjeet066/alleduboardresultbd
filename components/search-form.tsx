@@ -70,7 +70,9 @@ export function SearchForm() {
       eiin: "",
     },
   })
- 
+  useEffect(() => {
+  generateCaptcha();
+  }, []);
   const loadCaptcha = () => {
     try {
       const timestamp = Date.now()
